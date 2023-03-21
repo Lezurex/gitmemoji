@@ -1,18 +1,22 @@
 # gitmemoji
 
-## Available Scripts
+This project is originally forked from [lalalilo/gitmemoji](https://github.com/lalalilo/gitmemoji).
 
-In the project directory, you can run:
+## Setup
 
-### `yarn start`
+Install the dependencies and finally run the app by executing these commands in the project directory.
+Make sure you are using Node.js 16.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+yarn
+yarn start
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Adding new gitmoji
 
-### `yarn test`
+Gitmoji data is stored in `src/emojis.json`. The current collection of gitmoji can
+be found on their [website](https://gitmoji.dev/). Gitmoji are also stored as an HTML entity.
+The unicode codes can be found on the official [Unicode website](https://unicode.org/emoji/charts/full-emoji-list.html).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Additionally, colors are stored in `src/emoji-colors.ts`. These reference the gitmoji by name. The color
+is taken directly from the gitmoji website.
