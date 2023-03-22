@@ -2,10 +2,10 @@ import { useState } from "react";
 import * as React from "react";
 import styled from "styled-components";
 import "csshake";
+import { gitmojis } from "gitmojis";
 
 import useGitmojiQuiz from "./useGitmojiQuiz";
 import MinimalEmojiCard from "./MinimalEmojiCard";
-import emojis from "./emojis.json";
 
 const HardQuiz: React.FC = () => {
   const { currentQuestion, setNewQuestion } = useGitmojiQuiz();
@@ -27,7 +27,7 @@ const HardQuiz: React.FC = () => {
         {currentQuestion.description}
       </Question>
       <HardGrid>
-        {emojis.gitmojis.map((emoji) => (
+        {gitmojis.map((emoji) => (
           <>
             <MinimalEmojiCard
               emojiData={emoji}
