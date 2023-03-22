@@ -12,9 +12,7 @@ const Home: React.FC = () => {
         </Title>
         <Description>
           Learn{" "}
-          <ExternalLink href="https://gitmoji.carloscuesta.me/">
-            gitmoji!
-          </ExternalLink>
+          <ExternalLink href="https://gitmoji.dev/">gitmoji!</ExternalLink>
         </Description>
       </Group>
       <GitHubButton />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const GitHubButton: React.FC = () => {
   return (
-    <Button href="https://github.com/lalalilo/gitmemoji">
+    <Button href="https://github.com/Lezurex/gitmemoji">
       <span role="img" aria-label="star">
         ⭐️
       </span>{" "}
