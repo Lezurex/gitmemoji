@@ -4873,6 +4873,11 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
+gitmojis@^3.13.4:
+  version "3.13.4"
+  resolved "https://registry.yarnpkg.com/gitmojis/-/gitmojis-3.13.4.tgz#1ada02d46bc2c8d802e5ad1644acd02b5f798617"
+  integrity sha512-TRYhqnD36Xs9GHuATVRmo7hzBb+6wXYC0zxBFvLs3nma7N1WQGWW2vPTQ0+3GsGcPwSp0XVGfe3Besn4a6ip5Q==
+
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
   resolved "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz"
