@@ -39,6 +39,12 @@ const Emoji = styled.div`
   font-size: 80px;
   cursor: pointer;
 
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
   @media screen and (max-width: 500px) {
     font-size: 40px;
   }

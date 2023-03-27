@@ -40,6 +40,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: #fff;
 
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+
   @media screen and (max-width: 500px) {
     flex-direction: row;
   }
