@@ -4937,9 +4937,9 @@ get-symbol-description@^1.0.0:
     get-intrinsic "^1.1.1"
 
 gitmojis@^3.13.4:
-  version "3.13.4"
-  resolved "https://registry.yarnpkg.com/gitmojis/-/gitmojis-3.13.4.tgz#1ada02d46bc2c8d802e5ad1644acd02b5f798617"
-  integrity sha512-TRYhqnD36Xs9GHuATVRmo7hzBb+6wXYC0zxBFvLs3nma7N1WQGWW2vPTQ0+3GsGcPwSp0XVGfe3Besn4a6ip5Q==
+  version "3.13.5"
+  resolved "https://registry.yarnpkg.com/gitmojis/-/gitmojis-3.13.5.tgz#989371de98d79a42bd42394b1c6a142ed56f77fd"
+  integrity sha512-MLM88QAaWpYWlvtBjHBxshI9AGRH+LLluD6NbhymeWp0EQ1Sew8SgC0BpiQuQ4DCYGKs9LcX4zRL3lDlwOPA5g==
 
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
