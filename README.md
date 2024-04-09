@@ -5,12 +5,11 @@ This project is originally forked from [lalalilo/gitmemoji](https://github.com/l
 ## Setup
 
 Install the dependencies and finally run the app by executing these commands in the project directory.
-Make sure you are using Node.js 18.
+Make sure you have [Bun](https://bun.sh/) installed.
 
 ```bash
-# Optional: nvm use
-yarn
-yarn start
+bun install
+bun start
 ```
 
 ## Adding new gitmojis
