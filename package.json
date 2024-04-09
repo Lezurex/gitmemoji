@@ -2,6 +2,7 @@
   "name": "gitmemoji",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "csshake": "^1.7.0",
     "gitmojis": "^3.13.4",
@@ -9,20 +10,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.9",
-    "typescript": "^5.0.0",
-    "workbox-core": "^6.5.4",
-    "workbox-expiration": "^6.5.4",
-    "workbox-precaching": "^6.5.4",
-    "workbox-routing": "^6.5.4",
-    "workbox-strategies": "^6.5.4"
+    "styled-components": "^6.0.0",
+    "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "deploy": "aws-spa deploy --cacheInvalidation \"/index.html\" --cacheBustedPrefix \"static/\""
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,14 +34,15 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
+    "@happy-dom/global-registrator": "^14.7.1",
+    "@testing-library/react": "^14.3.0",
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
-    "aws-spa": "^3.2.0",
-    "eslint-config-react-app": "^7.0.1"
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint-config-react-app": "^7.0.1",
+    "vite": "^5.2.8"
   }
 }
