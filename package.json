@@ -43,6 +43,6 @@
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint-config-react-app": "^7.0.1",
-    "vite": "^5.2.8"
+    "vite": "^7.0.0"
   }
 }
