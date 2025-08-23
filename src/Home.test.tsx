@@ -14,6 +14,12 @@ test("renders home page", () => {
   expect(gitmojiLink).toBeInTheDocument();
   expect(gitmojiLink).toHaveAttribute("href", "https://gitmoji.dev/");
 
-  expect(screen.getByText(/quiz for newbies/i)).toBeInTheDocument();
-  expect(screen.getByText(/quiz for gurus/i)).toBeInTheDocument();
+  const newbies = screen.getByText(/quiz for newbies/i)
+  const gurus = screen.getByText(/quiz for gurus/i)
+
+  expect(newbies).toBeInTheDocument();
+  expect(newbies).toHaveAttribute("href", "/easy")
+
+  expect(gurus).toBeInTheDocument();
+  expect(gurus).toHaveAttribute("href", "/hard")
 });
