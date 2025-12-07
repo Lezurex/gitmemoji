@@ -27,7 +27,9 @@ const MinimalEmojiCard: React.FC<EmojiCardProps> = ({
   );
 };
 
-const Emoji = styled.div`
+const Emoji = styled.button`
+  padding: 0;
+  border: none;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
@@ -41,7 +43,7 @@ const Emoji = styled.div`
 
   transition: 200ms ease-in-out;
 
-  &:hover {
+  &:hover, &:focus {
     transform: scale(0.95);
   }
 

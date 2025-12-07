@@ -29,7 +29,7 @@ const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #80deea;
+  background-color: #BAEDF4;
   min-height: 100vh;
 `;
 
@@ -49,12 +49,12 @@ const Description = styled.div`
 `;
 
 const ExternalLink = styled.a`
-  color: #ef584a;
+  color: #7F2F27;
   text-decoration: none;
 `;
 
 const GoToQuiz = styled(Link)`
-  color: #ef584a;
+  color: #7F2F27;
   text-decoration: none;
   font-weight: bold;
   font-size: 40px;

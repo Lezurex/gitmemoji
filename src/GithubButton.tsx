@@ -13,9 +13,9 @@ const GitHubButton: React.FC = () => {
 };
 
 const Button = styled.a`
-  background-color: #a78674;
+  background-color: #5B493F;
   color: #fff;
-  box-shadow: 0 4px #795548;
+  box-shadow: 0 4px #463831ff;
 
   display: inline-block;
   cursor: pointer;
