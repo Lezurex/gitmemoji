@@ -34,38 +34,36 @@ mock.module("./useGitmojiQuiz", () => ({
   }),
 }));
 
-const { default: EasyQuiz } = await import("./EasyQuiz");
+const { default: HardQuiz } = await import("./HardQuiz");
 
 beforeEach(cleanup)
 
 test("renders question and choices", async () => {
-  render(<EasyQuiz />);
+  render(<HardQuiz />);
 
-  expect(screen.queryByText("Celebrate something")).not.toBeNull();
-  expect(screen.queryByText(":tada:")).not.toBeNull();
-  expect(screen.queryByText(":bug:")).not.toBeNull();
+  expect(screen.queryByText("🎉")).not.toBeNull();
+  expect(screen.queryByText("🐛")).not.toBeNull();
 });
 
 test("clicking correct emoji calls setNewQuestion", async () => {
-  render(<EasyQuiz />);
+  render(<HardQuiz />);
 
-  const correct = screen.getByText(":tada:");
+  const correct = screen.getByText("🎉");
   fireEvent.click(correct);
 
   expect(mockSetNewQuestion.calls.length).toBeGreaterThan(0);
 });
 
 test("clicking wrong emoji adds and removes shake class", async () => {
-  render(<EasyQuiz />);
+  render(<HardQuiz />);
 
-  const wrong = screen.getByText(":bug:");
-  const wrapper = wrong.parentElement?.parentElement;
+  const wrong = screen.getByText("🐛");
 
   fireEvent.click(wrong);
 
-  expect(wrapper?.classList.contains("shake")).toBe(true);
+  expect(wrong.classList.contains("shake")).toBe(true);
 
   await waitFor(() => {
-    expect(wrapper?.classList.contains("shake")).toBe(false);
+    expect(wrong.classList.contains("shake")).toBe(false);
   }, { timeout: 1100 });
 });

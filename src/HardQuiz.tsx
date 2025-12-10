@@ -28,21 +28,19 @@ const HardQuiz: React.FC = () => {
       </Question>
       <HardGrid>
         {gitmojis.map((emoji) => (
-          <>
-            <MinimalEmojiCard
-              emojiData={emoji}
-              key={emoji.code}
-              className={shake === emoji.name ? "shake shake-constant" : ""}
-              onClick={async () => {
-                if (emoji.name === currentQuestion.name) {
-                  return setNewQuestion();
-                }
-                setShake(emoji.name);
-                await new Promise((resolve) => setTimeout(resolve, 1000));
-                setShake(null);
-              }}
-            />
-          </>
+          <MinimalEmojiCard
+            emojiData={emoji}
+            key={emoji.code}
+            className={shake === emoji.name ? "shake shake-constant" : ""}
+            onClick={async () => {
+              if (emoji.name === currentQuestion.name) {
+                return setNewQuestion();
+              }
+              setShake(emoji.name);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              setShake(null);
+            }}
+          />
         ))}
       </HardGrid>
     </Layout>
