@@ -1,5 +1,7 @@
 import { test, expect, mock, beforeEach } from "bun:test";
 import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+
 import type { EmojiData } from "./EmojiData";
 
 function createMockFunction() {
@@ -39,14 +41,14 @@ const { default: HardQuiz } = await import("./HardQuiz");
 beforeEach(cleanup)
 
 test("renders question and choices", async () => {
-  render(<HardQuiz />);
+  render(<MemoryRouter><HardQuiz /></MemoryRouter>);
 
   expect(screen.queryByText("🎉")).not.toBeNull();
   expect(screen.queryByText("🐛")).not.toBeNull();
 });
 
 test("clicking correct emoji calls setNewQuestion", async () => {
-  render(<HardQuiz />);
+  render(<MemoryRouter><HardQuiz /></MemoryRouter>);
 
   const correct = screen.getByText("🎉");
   fireEvent.click(correct);
@@ -55,7 +57,7 @@ test("clicking correct emoji calls setNewQuestion", async () => {
 });
 
 test("clicking wrong emoji adds and removes shake class", async () => {
-  render(<HardQuiz />);
+  render(<MemoryRouter><HardQuiz /></MemoryRouter>);
 
   const wrong = screen.getByText("🐛");
 
@@ -65,5 +67,20 @@ test("clicking wrong emoji adds and removes shake class", async () => {
 
   await waitFor(() => {
     expect(wrong.classList.contains("shake")).toBe(false);
+  }, { timeout: 1100 });
+});
+
+test("clicking show answer button adds and removes shake class", async () => {
+  render(<MemoryRouter><HardQuiz /></MemoryRouter>);
+
+  const btn = screen.getByText("Show Answer");
+  const correct = screen.getByText("🎉");
+
+  fireEvent.click(btn);
+
+  expect(correct.classList.contains("shake")).toBe(true);
+
+  await waitFor(() => {
+    expect(correct.classList.contains("shake")).toBe(false);
   }, { timeout: 1100 });
 });

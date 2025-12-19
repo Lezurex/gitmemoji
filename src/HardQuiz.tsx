@@ -6,6 +6,7 @@ import { gitmojis } from "gitmojis";
 
 import useGitmojiQuiz from "./useGitmojiQuiz";
 import MinimalEmojiCard from "./MinimalEmojiCard";
+import QuestionBar from "./QuestionBar";
 
 const HardQuiz: React.FC = () => {
   const { currentQuestion, setNewQuestion } = useGitmojiQuiz();
@@ -17,15 +18,10 @@ const HardQuiz: React.FC = () => {
 
   return (
     <Layout>
-      <Question
-        onClick={async () => {
-          setShake(currentQuestion.name);
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-          setShake(null);
-        }}
-      >
-        {currentQuestion.description}
-      </Question>
+      <QuestionBar
+        emoji={currentQuestion}
+        setShake={setShake}
+      />
       <HardGrid>
         {gitmojis.map((emoji) => (
           <MinimalEmojiCard
@@ -50,18 +46,6 @@ const HardQuiz: React.FC = () => {
 const Layout = styled.div`
   min-height: 100vh;
   background-color: #eee;
-`;
-
-const Question = styled.div`
-  box-shadow: 0 1px 2px 0 rgba(168, 182, 191, 0.6);
-  padding: 1em 0.5em;
-  font-size: 30px;
-  text-align: center;
-  color: #555;
-  font-weight: bold;
-  background-color: #fff;
-  position: sticky;
-  top: 0;
 `;
 
 const Grid = styled.div`

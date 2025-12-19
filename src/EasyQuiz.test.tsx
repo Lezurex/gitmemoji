@@ -1,5 +1,7 @@
 import { test, expect, mock, beforeEach } from "bun:test";
 import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+
 import type { EmojiData } from "./EmojiData";
 
 function createMockFunction() {
@@ -39,7 +41,7 @@ const { default: EasyQuiz } = await import("./EasyQuiz");
 beforeEach(cleanup)
 
 test("renders question and choices", async () => {
-  render(<EasyQuiz />);
+  render(<MemoryRouter><EasyQuiz /></MemoryRouter>);
 
   expect(screen.queryByText("Celebrate something")).not.toBeNull();
   expect(screen.queryByText(":tada:")).not.toBeNull();
@@ -47,7 +49,7 @@ test("renders question and choices", async () => {
 });
 
 test("clicking correct emoji calls setNewQuestion", async () => {
-  render(<EasyQuiz />);
+  render(<MemoryRouter><EasyQuiz /></MemoryRouter>);
 
   const correct = screen.getByText(":tada:");
   fireEvent.click(correct);
@@ -56,12 +58,28 @@ test("clicking correct emoji calls setNewQuestion", async () => {
 });
 
 test("clicking wrong emoji adds and removes shake class", async () => {
-  render(<EasyQuiz />);
+  render(<MemoryRouter><EasyQuiz /></MemoryRouter>);
 
   const wrong = screen.getByText(":bug:");
   const wrapper = wrong.parentElement?.parentElement;
 
   fireEvent.click(wrong);
+
+  expect(wrapper?.classList.contains("shake")).toBe(true);
+
+  await waitFor(() => {
+    expect(wrapper?.classList.contains("shake")).toBe(false);
+  }, { timeout: 1100 });
+});
+
+test("clicking show answer button adds and removes shake class", async () => {
+  render(<MemoryRouter><EasyQuiz /></MemoryRouter>);
+
+  const btn = screen.getByText("Show Answer");
+  const correct = screen.getByText(":tada:");
+  const wrapper = correct.parentElement?.parentElement;
+
+  fireEvent.click(btn);
 
   expect(wrapper?.classList.contains("shake")).toBe(true);
 
