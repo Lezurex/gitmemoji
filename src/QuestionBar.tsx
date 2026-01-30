@@ -15,7 +15,7 @@ const QuestionBar: React.FC<QuestionBarProps> = ({
 }) => {
   return (
     <Bar>
-      <Link to="/" style={{display: "flex"}}>
+      <Link to="/" style={{display: "flex", textDecoration: "none"}}>
         <Button icon="⬅️" iconAriaLabel="back">Back</Button>
       </Link>
       <Question>{emoji.description}</Question>
