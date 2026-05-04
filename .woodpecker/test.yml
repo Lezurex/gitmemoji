@@ -1,0 +1,10 @@
+when:
+  - event: [push]
+
+steps:
+  verify:
+    image: oven/bun:latest
+    commands:
+      - bun install --frozen-lockfile
+      - bun run build
+      - bun test
